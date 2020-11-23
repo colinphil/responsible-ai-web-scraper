@@ -9,7 +9,7 @@ import gspread
 # Obtain scraped data from Google Scholar
 def scrape(url):
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'}
+        'User-Agent': str(config('USER_AGENT'))}
 
     response = requests.get(url, headers=headers)
     soup = BeautifulSoup(response.content, 'lxml')
